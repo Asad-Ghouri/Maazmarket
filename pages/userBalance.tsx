@@ -113,25 +113,29 @@ import {
   
     return (
       <div className={styles.container}>
-        <h1 className={styles.st2}>Stake Your NFTs</h1>
+        {/* <h1 className={styles.st2}>Stake Your NFTs</h1> */}
   
         <hr className={`${styles.divider} ${styles.spacerTop}`} />
   
         {!address ? (
+          <>
+          <h1 className="cow cow1">Connect Wallet</h1>
+           <h1 className="yn">You need an Etherium wallet to use Ape Club</h1>
           <button className={styles.mainButton} onClick={connectWithMetamask}>
             Connect Wallet
           </button>
+          </>
         ) : (
           <>
-            <h2>Your Tokens</h2>
+            <h1 className={styles.yb}>Your Balance</h1>
   
             <div className={styles.tokenGrid}>
-              <div className={styles.tokenItem}>
+              {/* <div className={styles.tokenItem}>
                 <h3 className={styles.tokenLabel}>Claimable Rewards</h3>
                 <p className={styles.tokenValue}>
 
                 </p>
-              </div>
+              </div> */}
               <div className={styles.tokenItem}>
                 <h3 className={styles.tokenLabel}>Current Balance</h3>
                 <p className={styles.tokenValue}>

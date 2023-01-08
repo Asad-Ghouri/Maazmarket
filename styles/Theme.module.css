@@ -1,5 +1,5 @@
 .container {
-  margin-top: 96px;
+  /* margin-top: 96px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -268,7 +268,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-top: 28px;
+    margin-top: 3rem;
     margin-bottom: 150px;
     flex-wrap: wrap;
 }
@@ -317,10 +317,11 @@
 }
 
 .nftBoxGrid {
-    width: auto;
-    max-width: 95vw;
+    /* width: auto; */
+    max-width: 100vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-items: center;
 }
 
 .nftMedia {
@@ -714,8 +715,9 @@
 }
 
 .tokenItem {
-  width: 35%;
-  height: 120px;
+  width: 65%;
+  height: 150px;
+  margin-top: 4rem;
   border-radius: 16px;
   display: flex;
   background-color: rgba(0,0,0,0.5);
@@ -847,5 +849,19 @@
   .st2{
     margin-top: 16rem;
   }
+  .collectionContainer{
+    z-index: 222;
+  }
+  .detailPageContainer{
+    display: none;
+  }
+  .yb{
+    margin-top: 15rem!important;
+  }
+}
 
+.yb{
+  font-size: 4rem;
+  margin-top: 3rem;
+  text-align: center;
 }

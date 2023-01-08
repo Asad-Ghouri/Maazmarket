@@ -7,6 +7,8 @@ import {
     Avatar,
     Heading
 } from '@chakra-ui/react'
+
+import { useEffect } from 'react'
 import {
     FiMenu,
     FiHome,
@@ -19,15 +21,34 @@ import {
 import { IoPawOutline } from 'react-icons/io5'
 import NavItem from '../components/NavItem'
 
+import Dicon from "../public/icons/d_icon.png"
+import Desicon from "../public/icons/dicon.png"
+import listing from "../public/icons/listing.png"
+import balance from "../public/icons/balance.png"
+
 export default function Sidebar() {
+
+    
     const [navSize, changeNavSize] = useState("small")
+    const [navSize1, changeNavSize1] = useState("small")
+
+    
+    
+    useEffect(() => {
+        // window.matchMedia('(min-width: 768px)').addListener(handler);
+        var x = window.matchMedia("(max-width: 700px)");
+        if(x.matches){
+            changeNavSize1("small");
+        }
+    }, []);
+
     return (
         <Flex
             // pos="sticky"
             onMouseEnter={() => changeNavSize("large" )} onMouseLeave={() => changeNavSize("small")}
             pos="absolute"
             left="5"
-            h="95vh"
+            // h="95vh"
             marginTop="2.5vh"
             boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
             borderRadius={navSize == "small" ? "15px" : "30px"}
@@ -44,7 +65,7 @@ export default function Sidebar() {
                 as="nav"
                 className='test'
             >
-                <IconButton
+                {/* <IconButton
                     background="none"
                     mt={5}
                     _hover={{ background: 'none' }}
@@ -55,11 +76,14 @@ export default function Sidebar() {
                         else
                             changeNavSize("small")
                     }}
-                />
-                <NavItem navSize={navSize} icon={FiHome} title="Dashboard"  c_path = "/" />
-                <NavItem navSize={navSize} icon={FiCalendar} title="MarketPlace"  c_path = "listings" />
-                <NavItem navSize={navSize} icon={FiUser} title="Staking" c_path = "stake" />
-                <NavItem navSize={navSize} icon={IoPawOutline} title="Balance" c_path = "userBalance" />
+                /> */}
+                
+                {/* {FiHome} */}
+                {/* as={icon} */}
+                <NavItem navSize={navSize}  navSize1={navSize1} icon={Dicon} title="Dashboard"  c_path = "/" />
+                <NavItem navSize={navSize}  navSize1={navSize1} icon={Desicon} title="MarketPlace"  c_path = "listings" />
+                <NavItem navSize={navSize} navSize1={navSize1} icon={listing} title="Listing" c_path = "stake" />
+                <NavItem navSize={navSize} navSize1={navSize1} icon={balance} title="Balance" c_path = "userBalance" />
 
                 {/* <NavItem navSize={navSize} icon={IoPawOutline} title="Animals" />
                 <NavItem navSize={navSize} icon={FiDollarSign} title="Stocks" /> */}

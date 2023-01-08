@@ -165,17 +165,20 @@ const Stake: NextPage = () => {
         </div>
       </Link>
       <div className={styles.container}>
-        <h1 className={styles.st}>Stake Your NFTs</h1>
+        <h1 className={styles.yb}>List Your NFTs</h1>
 
         <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
         {!address ? (
+          <>
+          <h1 className="yn">You need an Etherium wallet to use Ape Club</h1>
           <button className={styles.mainButton} id="autom" onClick={connectWithMetamask}>
             Connect Wallet
           </button>
+          </>
         ) : (
           <>
-            <h2>Your Tokens</h2>
+            {/* <h2>Your Tokens</h2>
 
             <div className={styles.tokenGrid}>
               <div className={styles.tokenItem}>
@@ -187,11 +190,10 @@ const Stake: NextPage = () => {
                   <b>
                     0x----------
                   </b>
-                  {/* <b>{currentbal}</b> */}
-                  {/* <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol} */}
+                
                 </p>
               </div>
-            </div>
+            </div> */}
 
 
             <hr className={`${styles.divider} ${styles.spacerTop}`} />
@@ -199,7 +201,7 @@ const Stake: NextPage = () => {
 
             <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
-            <h2>Your Unstaked NFTs</h2>
+            <h2>(Do not list one nft multiple time)</h2>
 
             <div className={styles.nftBoxGrid1}>
             <div className={styles.nftBoxGrid}>

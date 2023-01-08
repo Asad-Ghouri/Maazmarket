@@ -8,11 +8,14 @@ import {
     MenuButton,
     MenuList
 } from '@chakra-ui/react'
+
 import NavHoverBox from '../components/NavHoverBox'
+
+import Image from 'next/image';
 
 import { useRouter } from "next/router";
 
-export default function NavItem({ icon, title, description, active, navSize ,c_path }) {
+export default function NavItem({ icon, title, description, active, navSize ,c_path,navSize1 }) {
    
     const router = useRouter();
     
@@ -33,14 +36,15 @@ export default function NavItem({ icon, title, description, active, navSize ,c_p
                     backgroundColor={active && "#AEC8CA"}
                     p={3}
                     borderRadius={8}
-                    _hover={{ textDecor: 'none', backgroundColor: "#AEC8CA" }}
+                    // _hover={{ textDecor: 'none', backgroundColor: "#AEC8CA" }}
                     w={navSize == "large" && "100%"}
                 >
                     <MenuButton w="100%" onClick={rendeer}>
                         <Flex>
-                            <Icon as={icon} fontSize="xl" color={active ? "#82AAAD" : "gray.500"} />
-                            <Text ml={5} display={navSize == "small" ? "none" : "flex"}>{title}</Text>
+                            <Image src={icon} className={navSize == "small" ? "navsmall" : "navlarge"} id="eeeg" />
+                            <Text ml={5} className="sbtext" display={navSize == "small" ? "none" : "flex"} id="tttl" >{title}</Text>
                         </Flex>
+                        {/* className="sbimg"  */}
                     </MenuButton>
                 </Link>
                 <MenuList

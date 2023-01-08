@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default function besideNavbar() {
+import {
+  Link,
+} from "@chakra-ui/react";
+
+export default function BesideNavbar() {
   return (
     <div className="bg-coal-dark border-2 border-coal-light rounded-xl">
     <ul className="bg-coal-light bg-opacity-25 rounded-xl divide-y divide-coal-light">

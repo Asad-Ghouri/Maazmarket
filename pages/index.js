@@ -1,8 +1,10 @@
-import Head from 'next/head';
+import Head from "next/head";
 import {
   useAddress,
   useDisconnect,
-  useMetamask, useWalletConnect, useCoinbaseWallet,
+  useMetamask,
+  useWalletConnect,
+  useCoinbaseWallet,
   useNetwork,
   useNetworkMismatch,
 } from "@thirdweb-dev/react";
@@ -29,8 +31,8 @@ import {
   useToast,
   Flex,
   Tag,
-} from '@chakra-ui/react';
-import Sidebar from '../components/Sidebar';
+} from "@chakra-ui/react";
+import Sidebar from "../components/Sidebar";
 import { useRouter } from "next/router";
 import React, { useContext, useRef } from "react";
 import { RiStore2Line, RiSignalWifiErrorLine } from "react-icons/ri";
@@ -45,9 +47,9 @@ export default function Index() {
   const networkMismatch = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
   const address = useAddress();
-  
-  const color = useColorModeValue('gray.800', 'gray.300');
-  
+
+  const color = useColorModeValue("gray.800", "gray.300");
+
   const connectWithMetamask = useMetamask();
   const connectWithWalletConnect = useWalletConnect();
   const connectWithCoinbaseWallet = useCoinbaseWallet();
@@ -64,17 +66,18 @@ export default function Index() {
   function moreClick() {
     router.push("/learnmore");
   }
-  
+
   return (
     <>
-    {/* <Sidebar/> */}
-      <Container maxW={'3xl'}>
+      {/* <Sidebar/> */}
+      <Container maxW={"3xl"}>
         <Stack
           as={Box}
-          textAlign={'center'}
+          textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
-          <Heading
+          py={{ base: 20, md: 36 }}
+        >
+          {/* <Heading
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}
@@ -84,43 +87,71 @@ export default function Index() {
             <Text as={'span'} color={'green.400'}>
               your creativity
             </Text>
-          </Heading>
-          <Text color={'gray.500'}>
-            Monetize your creativity by charging your most loyal community and reward
-            them loyalty points. Give back to your loyal community by granting
-            them access to your pre-releases and staking NFT.
+          </Heading> */}
+          <div className="col-md-12 text-center aa">
+            <br />
+            <br />
+            <hr />
+            <hr />
+            <h3 className>
+              <b>Announcement : We have added 5 new items to the store!</b>
+            </h3>
+            <hr />
+            <hr />
+          </div>
+          <Text color={"gray.500"}>
+            Monetize your creativity by charging your most loyal community and
+            reward them loyalty points. Give back to your loyal community by
+            granting them access to your pre-releases and staking NFT.
           </Text>
-          
+
           <Stack
-            direction={'column'}
+            direction={"column"}
             spacing={3}
-            align={'center'}
-            alignSelf={'center'}
-            position={'relative'}>
-        {address ? (
-		<>
-{networkMismatch ? (
-<>
-            <Button leftIcon={<RiSignalWifiErrorLine />} variant={'outline'}
-              rounded={'full'}
-              px={6} onClick={() => switchNetwork(Number(process.env.NEXT_PUBLIC_CHAIN_ID))} colorScheme={'blue'} size={'md'}>
-Switch Network
-            </Button>
-</>
-) : (
-<>
-        <Stack flex={2} direction={{ md: 'row', base: 'column'}} spacing={{ base: 5, md: 5 }}>
-            <Button leftIcon={<FcShop />} variant={'outline'} onClick={homeClick}
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: 'green.500',
-              }}>
-              Marketplace
-            </Button>
-            {/* <Button leftIcon={<FcGallery />} variant={'outline'} onClick={uploadClick}
+            align={"center"}
+            alignSelf={"center"}
+            position={"relative"}
+          >
+            {address ? (
+              <>
+                {networkMismatch ? (
+                  <>
+                    <Button
+                      leftIcon={<RiSignalWifiErrorLine />}
+                      variant={"outline"}
+                      rounded={"full"}
+                      px={6}
+                      onClick={() =>
+                        switchNetwork(Number(process.env.NEXT_PUBLIC_CHAIN_ID))
+                      }
+                      colorScheme={"blue"}
+                      size={"md"}
+                    >
+                      Switch Network
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Stack
+                      flex={2}
+                      direction={{ md: "row", base: "column" }}
+                      spacing={{ base: 5, md: 5 }}
+                    >
+                      <Button
+                        leftIcon={<FcShop />}
+                        variant={"outline"}
+                        onClick={homeClick}
+                        colorScheme={"green"}
+                        bg={"green.400"}
+                        rounded={"full"}
+                        px={6}
+                        _hover={{
+                          bg: "green.500",
+                        }}
+                      >
+                        Marketplace
+                      </Button>
+                      {/* <Button leftIcon={<FcGallery />} variant={'outline'} onClick={uploadClick}
               colorScheme={'green'}
               bg={'green.400'}
               rounded={'full'}
@@ -130,7 +161,7 @@ Switch Network
               }}>
               Create Listing
             </Button> */}
-            {/* <Button leftIcon={<FcGallery />} variant={'outline'} onClick={stakeClick}
+                      {/* <Button leftIcon={<FcGallery />} variant={'outline'} onClick={stakeClick}
               colorScheme={'blue'}
               bg={'blue.400'}
               rounded={'full'}
@@ -140,13 +171,13 @@ Switch Network
               }}>
               Stake NFT
             </Button> */}
-</Stack>
-</>
-)}
-	    </>
-          ) : (
-		  <>
-        {/* <Stack flex={2} direction={{ md: 'row', base: 'column'}} spacing={{ base: 5, md: 5 }}>
+                    </Stack>
+                  </>
+                )}
+              </>
+            ) : (
+              <>
+                {/* <Stack flex={2} direction={{ md: 'row', base: 'column'}} spacing={{ base: 5, md: 5 }}>
             <Button onClick={onOpen}
               colorScheme={'green'}
               bg={'green.400'}
@@ -218,18 +249,26 @@ Switch Network
             </Box>
 </Stack> */}
 
-<Stack flex={2} direction={{ md: 'row', base: 'column'}} spacing={{ base: 5, md: 5 }}>
-            <Button leftIcon={<FcShop />} variant={'outline'} onClick={homeClick}
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: 'green.500',
-              }}>
-              Marketplace
-            </Button>
-            {/* <Button leftIcon={<FcGallery />} variant={'outline'} onClick={uploadClick}
+                <Stack
+                  flex={2}
+                  direction={{ md: "row", base: "column" }}
+                  spacing={{ base: 5, md: 5 }}
+                >
+                  <Button
+                    leftIcon={<FcShop />}
+                    variant={"outline"}
+                    onClick={homeClick}
+                    colorScheme={"green"}
+                    bg={"green.400"}
+                    rounded={"full"}
+                    px={6}
+                    _hover={{
+                      bg: "green.500",
+                    }}
+                  >
+                    Marketplace
+                  </Button>
+                  {/* <Button leftIcon={<FcGallery />} variant={'outline'} onClick={uploadClick}
               colorScheme={'green'}
               bg={'green.400'}
               rounded={'full'}
@@ -239,7 +278,7 @@ Switch Network
               }}>
               Create Listing
             </Button> */}
-            {/* <Button leftIcon={<FcGallery />} variant={'outline'} onClick={stakeClick}
+                  {/* <Button leftIcon={<FcGallery />} variant={'outline'} onClick={stakeClick}
               colorScheme={'blue'}
               bg={'blue.400'}
               rounded={'full'}
@@ -249,9 +288,9 @@ Switch Network
               }}>
               Stake NFT
             </Button> */}
-</Stack>
-		  </>
-		)}
+                </Stack>
+              </>
+            )}
           </Stack>
         </Stack>
       </Container>
@@ -260,8 +299,8 @@ Switch Network
 }
 
 const Arrow = createIcon({
-  displayName: 'Arrow',
-  viewBox: '0 0 72 24',
+  displayName: "Arrow",
+  viewBox: "0 0 72 24",
   path: (
     <path
       fillRule="evenodd"

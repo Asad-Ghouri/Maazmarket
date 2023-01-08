@@ -94,13 +94,14 @@ export default function Navbar() {
 
   return (
     <>
+    <div className="navz">
       <Box
         bg={color}
         px={4}
         style={{ position: "fixed", width: "100%", zIndex: 99999, top: 0, background:"rgb(23, 22, 27)", padding:"0.5rem"  }}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Image  src={Imgs}  height={60} width={128}  />
+          <Image  src={Imgs}  height={100} width={198}  />
         
         {/* <img src="https://app.alienfrens.io/_nuxt/img/logo.6ec3e4c.svg" width={228} height={228} alt="logo" /> */}
           
@@ -126,17 +127,17 @@ export default function Navbar() {
                   <Image src={Logo} width={28} height={28} alt="logo" />
                 </Link>
               </Button> */}
-              <Button onClick={toggleColorMode}>
+              {/* <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? (
                   <MoonIcon size={32} />
                 ) : (
                   <SunIcon size={32} />
                 )}
-              </Button>
+              </Button> */}
 
              {
              address ?
-             <Button onClick={() => {
+             <Button className="lo" onClick={() => {
               disconnectWallet(),
                 // homeClick(),
                 toast({
@@ -297,6 +298,7 @@ export default function Navbar() {
           </Flex>
         </Flex>
       </Box>
+      </div>
     </>
   );
 }
